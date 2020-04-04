@@ -32,5 +32,10 @@ Caso uma máquina apenas tenha aprendido que uma loja não vende durante os trei
 
 # Aula 03 - Um Projeto de Baixa Dimensionalidade e o Baseline
 
-# O que é baseline?
+## O que é baseline?
 A Baseline, ou Linha de Base é um parâmetro, que no caso na aula foi apenas um chute. O algoritmo deve 
+
+# Aula 05 - Dummy classifiers e árvore de decisão
+
+## O que são samples?
+Samples são casos que foram treinados
