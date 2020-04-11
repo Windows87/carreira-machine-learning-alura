@@ -9,6 +9,7 @@ dados = pd.read_csv('imdb-reviews-pt-br.csv')
 
 palavras = " ".join([texto for texto in dados.text_pt])
 
+# Tokenização
 tokenEspaco = tokenize.WhitespaceTokenizer()
 token = tokenEspaco.tokenize(palavras)
 
@@ -18,6 +19,7 @@ dataframe = pd.DataFrame({ "Palavra": list(frequencia.keys()), "Frequência": li
 
 print(dataframe)
 
+# Gráfico
 dataframeMaiores = dataframe.nlargest(columns = "Frequência", n = 10)
 
 plt.figure(figsize=(12,8))
