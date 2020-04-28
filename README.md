@@ -7,3 +7,6 @@ Meus Códigos e Conteúdos Gerados em Cursos que fiz sobre Inteligência Artific
 - Linguagem Natural parte 1: Introdução a NLP com análise de sentimento
 - Linguagem Natural parte 2: Continuando com a análise de sentimento
 - Deep Learning parte 1: Introdução com Keras
+
+## Cursos da Udemy
+- Deep Learning com Python de A a Z - O Curso Completo
