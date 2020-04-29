@@ -126,3 +126,49 @@ Pois não havia um desempenho computacional bom e não havia dados suficientes.
 <a href="https://stanford.edu/~shervine/l/pt/teaching/cs-229/dicas-aprendizado-profundo">Dicas de aprendizado profudo - Stanford EDU</a>
 
 <a href="http://deeplearningbook.com.br/o-efeito-do-batch-size-no-treinamento-de-redes-neurais-artificiais/">O Efeito do Batch Size no Treinamento de Redes Neurais Artificiais - Deep Learning Book</a>
+
+# **Seção 4: Classificação binária - base breast cancer**
+
+## Link para download do Data Set
+<a href="https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+%28Diagnostic%29">Clique aqui</a>
+
+## Como saber quantos Neurônios utilizar
+Utilize a equação *(entradas + saídas) / 2*. No exemplo da Seção 4, são 30 entradas e 1 saída, então a equação seria de *(30 + 1) / 2* com resultado 15.5, mas arredondado para 16.
+
+## K-fold Cross Validation
+A divisão de testes e treinamento pode ter um problema que alguns registros de teste poderiam contribuir muito mais se estivessem na base de dados de treinamento (que generalizariam mais).
+
+Com isso, entra a abordagem do K-Fold Cross Validation (Validação Cruzada), que busca encontrar os melhores dados de treinamento. Essa técnica é muito utilizada em pesquisas científicas.
+
+<img src="./Photos/Secao 2/kfold-cross-validation.png">
+
+Quase todos os trabalhos utilizam o **K = 10**, pois não há muito sentido utilizar valores muito altos. Disponível em ```02 - cross_validation.py```
+
+## Overfitting e Underfitting
+
+<img src="./Photos/Secao 4/underfitting-e-overfitting.png">
+
+- **Overfitting**: Utilizar muitos recursos para um problema simples (o que pode acabar viciando com os dados, as vezes não conseguindo classificar corretamente).
+  - Resultados bons na base de treinamento
+  - Resultados ruins na base de teste
+  - Muito específico
+  - Memorização
+
+<img src="./Photos/Secao 4/overfitting.png">
+
+- **Underfitting**: Utilizar poucos recursos para um problema complexo.
+  - Resultados ruins na base de treinamento
+
+<img src="./Photos/Secao 4/underfitting.png">
+
+- **Bom modelo**
+
+<img src="./Photos/Secao 4/bom-modelo.png">
+
+## Dropout
+O dropout zera neurônios aleatoriamente. O valor recomendado é de 20% a 30%. Disponível em ```01 - dropout.py```
+
+## Tuning (ajuste) dos parâmetros
+Disponível em ```04 - tuning.py```, o resultado pode demorar horas para ser calculado, pois busca os melhores testes para a rede neural.
+
+## Classificação de somente um registro
