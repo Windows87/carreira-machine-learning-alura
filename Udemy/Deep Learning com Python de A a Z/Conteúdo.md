@@ -171,4 +171,10 @@ O dropout zera neurônios aleatoriamente. O valor recomendado é de 20% a 30%. D
 ## Tuning (ajuste) dos parâmetros
 Disponível em ```04 - tuning.py```, o resultado pode demorar horas para ser calculado, pois busca os melhores testes para a rede neural.
 
-## Classificação de somente um registro
+# **Seção 4: Base Íris**
+
+## Diferenças entre Binário e Diferentes Itens
+  - Número de unidades de saídas
+  - Função de Ativação Softmax
+  - Função de loss
+  - Função de metrics

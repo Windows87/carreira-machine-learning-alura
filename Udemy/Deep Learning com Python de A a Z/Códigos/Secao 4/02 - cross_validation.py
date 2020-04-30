@@ -32,8 +32,7 @@ def criarRede():
 
   return model
 
-  classifier = KerasClassifier(build_fn = criarRede, epochs = 100, batch_size = 10)
-
+classifier = KerasClassifier(build_fn = criarRede, epochs = 100, batch_size = 10)
 result = cross_val_score(estimator = classifier, X = data_x, y = data_y, cv = 10, scoring = 'accuracy')
 
 mean = result.mean()
