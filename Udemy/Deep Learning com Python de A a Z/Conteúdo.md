@@ -171,10 +171,29 @@ O dropout zera neurônios aleatoriamente. O valor recomendado é de 20% a 30%. D
 ## Tuning (ajuste) dos parâmetros
 Disponível em ```04 - tuning.py```, o resultado pode demorar horas para ser calculado, pois busca os melhores testes para a rede neural.
 
-# **Seção 4: Base Íris**
+# **Seção 5: Base Íris**
 
 ## Diferenças entre Binário e Diferentes Itens
   - Número de unidades de saídas
   - Função de Ativação Softmax
   - Função de loss
   - Função de metrics
+
+# **Seção 6: Base de Carros Usados**
+
+## Link do Download do Dataset
+<a href="https://www.kaggle.com/orgesleka/used-cars-database">Clique Aqui</a>
+
+## Pré-Processamentos
+- **Dados Inúteis**: Remova os dados inúteis, ou seja, que não vão ajudar a classificar os dados.
+
+- **Desbalanceamento**: Veja se existe um desbalanceamento entre atributos (ex. um atributo "Tipo de Venda" apresenta 10.000 valores como "Venda Direta" e "3" como "Leilão", logo, esse atributo pode ser retirado).
+
+- **Inconsistentes**: Veja se há dados que não são consistentes (ex. preço muito baixo ou muito alto).
+
+- **Valores Faltantes**: Caso existam dados faltantes (NaN), faça um pré-processamento deles. No curso esses dados faltantes foram trocados por valores mais utilizados.
+
+- **One Hot Encoder**: Utilize isso para aqueles valores que não possuem um peso caso sejam diferentes (ex. tipo de carro, tipo de linguagem, etc.), pois um tipo de carro classificado como "0" não será melhor que um tipo de carro classificado como "1".
+
+## Diferenças de um Problema de Regressão
+- Utilizar a função de ativação linear na última camada, pois queremos um número e não uma probabilidade.
