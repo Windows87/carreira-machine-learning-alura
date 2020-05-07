@@ -197,3 +197,74 @@ Disponível em ```04 - tuning.py```, o resultado pode demorar horas para ser cal
 
 ## Diferenças de um Problema de Regressão
 - Utilizar a função de ativação linear na última camada, pois queremos um número e não uma probabilidade.
+
+# **Seção 9: Redes Neurais Convolucionais**
+
+## No que é utilizado?
+Utilizado em Visão Computacional: carros autônomos, análise de imagens.
+
+## Exemplo utilizando apenas cores
+Esses valores numéricos mostram as cores (Laranja camisa, Azul calção, etc.). Porém isso pode não ser muito efetivo em alguns outros trabalhos.
+
+<img src="./Photos/Secao 9/homer.png">
+
+## Redes neurais densas x Convolucionais
+- Não usa todas as entradas (pixels)
+
+- Usa uma rede neural tradicional, mas no começo transforma os dados na camada de entrada (extrai apenas as informações relevantes).
+
+## Etapas
+- **Etapa 1: Operador de convolução:** Processo de adicionar cada elemento da imagem para seus vizinhos, ponderado por um <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)"> kernel</a>.
+
+<img src="./Photos/Secao 9/convolucao.png">
+
+- **Etapa 2: Pooling:** Seleciona as características mais relevantes (reduz overfitting e ruídos desnecessários). De uma matriz, pega o valor maior pra compor a nova matriz.
+
+<img src="./Photos/Secao 9/pooling.png">
+
+- **Etapa 3: Flattening:**
+
+<img src="./Photos/Secao 9/flattening.png">
+
+- **Resumo:** Convolução -> ReLu -> Pooling -> Flattening -> Rede Neural Densa
+
+<img src="./Photos/Secao 9/resumo.png">
+
+Ao analisar a sociedade atual, entendo o quanto conhecer a teoria social de Karl Marx é importante para entender a minha vida, principalmente com relação as ideologias do século XXI.
+
+Nos últimos anos estamos sendo bombardeados por uma dualidade incoerente e irracional, que se baseia nos termos direita e esquerda, onde a primeira é composta por conservadores e liberais, e a segunda por todo o resto que se opõe aos ideais dos chamados “direitistas”. Tudo aquilo defende melhores condições de vida para a classe dominada ou oprimida, mesmo que tal reivindicação seja baseada somente no bom senso, é chamado de comunista, porém, no que elas se relacionam com a teoria marxista e por que essa classificação é vista com negativa?
+
+Os ideais de Karl Marx e Friedrich Engels se baseiam na relação entre a burguesia e o proletariado, a classe dominante e a classe dominada de cada período histórico, e propõe um sistema econômico igualitário, sem classes sociais. Todas as vezes ao longo da história que ocorreu o emprego desse sistema, sua essência foi modificada de acordo com os interesses dos governantes, resultando muitas vezes em ditaduras banhadas de sangue. Nunca ouve, em nenhuma civilização humana, uma sociedade baseada inteiramente, sem modificações, na teoria social de Marx.
+
+Entender isso nos ajuda a não seguir ideologias (distorções da realidade que visam o conservadorismo) e criar um pensamento aberto a utopias, e principalmente, compreender a qual classe social pertencemos e que práticas vamos adotar para transformar as desigualdades presentes no sistema capitalista.
+
+
+A influência de Karl Marx 
+
+ 
+
+Karl Marx idealizador do socialismo dizia que o estado deveria influenciar diretamente com dinheiro ou de outra forma para oferecer saúde, educação e esses outros serviços prestados, ao contrário de John Locke, idealizador do Neoliberalismo que defendia o estado-mínimo. 
+
+As ideias de Karl Marx influenciam diretamente na vida de qualquer cidadão, pois, em qualquer país se paga impostos, e esses impostos em teoria são convertidos para a ajuda dos mais necessitados, mais uma ideia de Karl Marx, que os ricos devem pagar impostos para ajudar os mais necessitados para todos nós atingirmos um nível de igualdade social. 
+
+No Brasil também temos os sistemas públicos, que são os próprios idealizados Karl Marx quando dizia que o estado deveria proporcionar esses serviços básicos para a população para que assim todos tenham as mesmas oportunidades e privilégios. Esses sistemas públicos são patrocinados pelos impostos que os mais ricos pagam fazendo assim a divisão de lucros proposta por Karl Marx. 
+
+Assim, podemos dizer que o Karl Marx teve uma grande importância para a construção do aspecto social do país e assim influenciando minha vida.
+
+Suas ideias de classes, continuam atualmente, cada classe em busca de seus próprios interesses, 
+
+- Luta de Classes
+  - Homem livre e escravo
+  - Opressores e oprimidos
+  - Revolucionária
+- Hierárquica
+  - Roma, Idade Media, Idema Moderna
+  - Senhores feudais - vassalos
+  - Oficiais e servos
+  - Burgues e operario
+- Indústria
+- Comércio
+- Sempre
+
+A teoria de Karl Marx representa desde a Roma até a nossa sociedade: uma grande hierarquia, com classes, e isso não se trata apenas de classes econômicas, mas sim de qualquer lugar: Um exemplo é a escola, que é composta de diversas hierarquias, diretor, coordenador, professor e aluno. Apesar de existirem mais alunos, eles que devem se submeter, muitas vezes forçadamente, a ordens dos professores e coordenadores (que ocorre em nossa sociedade capitalista).
+
