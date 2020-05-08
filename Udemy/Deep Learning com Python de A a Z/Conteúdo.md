@@ -222,7 +222,7 @@ Esses valores numéricos mostram as cores (Laranja camisa, Azul calção, etc.).
 
 <img src="./Photos/Secao 9/pooling.png">
 
-- **Etapa 3: Flattening:**
+- **Etapa 3: Flattening:** Transformação de um vetor 2D para um array 1D.
 
 <img src="./Photos/Secao 9/flattening.png">
 
