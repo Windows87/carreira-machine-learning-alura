@@ -229,3 +229,25 @@ Esses valores numéricos mostram as cores (Laranja camisa, Azul calção, etc.).
 - **Resumo:** Convolução -> ReLu -> Pooling -> Flattening -> Rede Neural Densa
 
 <img src="./Photos/Secao 9/resumo.png">
+
+# **Seção 13: Redes Neurais Recorrentes**
+
+## Usos
+- Dados Sequenciais
+- Prever a próxima ação
+- Fazer Processamento de Linguagem Natural
+  - Previsão da próxima palavra em um texto
+  - Tradução Automática
+  - Geração de Textos/Poemas
+- Geração de Legendas em Vídeos
+- Séries Temporais
+  - Preços de ações
+  - Temperatura
+  - Crescimento Populacional
+  - Nível de Poluição
+
+## Como funciona
+- Para entender o final de uma frase, é necessário saber o que foi dito antes
+- Redes neurais com loops que permitem que a informação persista
+
+<img src="https://static.imasters.com.br/wp-content/uploads/2017/09/8.png">
