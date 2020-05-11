@@ -10,3 +10,4 @@ Meus Códigos e Conteúdos Gerados em Cursos que fiz sobre Inteligência Artific
 
 ## Cursos da Udemy
 - Deep Learning com Python de A a Z - O Curso Completo
+- Algoritmos Genéticos em Python
