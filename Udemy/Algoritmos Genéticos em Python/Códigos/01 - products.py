@@ -1,5 +1,7 @@
 from random import random
 
+import matplotlib.pyplot as plt
+
 # Classe Produto
 class Product:
   def __init__(self, name, space, value):
@@ -7,7 +9,7 @@ class Product:
     self.space = space
     self.value = value
 
-# Classe Indivíduo
+    # Classe Indivíduo
 class Individual:
   def __init__(self, names, spaces, values, spaceLimit, chromosome = [], generation = 0):
     self.names = names
@@ -39,11 +41,13 @@ class Individual:
   def crossover(self, anotherIndividual):
     crossoverPoint = round(random() * len(self.chromosome))
 
-    childOne = anotherIndividual.chromosome[0:crossoverPoint * self.chromosome[crossoverPoint::]]
-    childTwo = self.chromosome[0:crossOverPoint * anotherIndividual.chromosome[crossoverPoint::]]
+    childOneChromosome = anotherIndividual.chromosome[0:crossoverPoint] + self.chromosome[crossoverPoint::]
+    childTwoChromosome = self.chromosome[0:crossoverPoint] + anotherIndividual.chromosome[crossoverPoint::]
 
-    children = [Individual(self.names, self.spaces, self.values, self.spaceLimit, childOne),
-                Individual(self.names, self.spaces, self.values, self.spaceLimit, childTwo)]
+    children = [Individual(self.names, self.spaces, self.values, self.spaceLimit, childOneChromosome, self.generation + 1),
+                Individual(self.names, self.spaces, self.values, self.spaceLimit, childTwoChromosome, self.generation + 1)]
+    
+    return children
 
 
   def mutate(self, mutateProbability):
@@ -70,8 +74,6 @@ class Individual:
     self.usedSpace = spaceSum
 
   def showIndividualData(self):
-    self.fitness()
-
     print('----- PRODUTOS ESCOLHIDOS -----')
     
     for i in range(len(self.chromosome)):
@@ -83,10 +85,12 @@ class Individual:
     print('Espaço Utilizado: ' + str(self.usedSpace))
     print('Nota: ' + str(self.rating))
 
-# Classe Algoritmo Genético
+    # Classe Algoritmo Genético
 class GeneticAlgorithm:
-  def __init__(self, populationLength):
+  def __init__(self, populationLength, mutationRate):
     self.populationLength = populationLength
+    self.mutationRate = mutationRate
+    
     self.population = []
     self.generation = 0
     self.bestSolution = 0
@@ -95,6 +99,7 @@ class GeneticAlgorithm:
     for i in range(self.populationLength):
       individual = Individual(names, spaces, values, spaceLimit, [])
       self.population.append(individual)
+    self.sortPopulation()
     self.bestSolution = self.population[0]
 
   def sortPopulation(self):
@@ -108,8 +113,41 @@ class GeneticAlgorithm:
     
     return sum
 
-  def showBestSolution(self):
-    self.bestSolution.showIndividualData()
+  def showBestSolutionNumber(self):
+    return self.bestSolution.rating
+
+  def selectFather(self):
+    father = -1
+    randomValue = random() * self.getRatingSum()
+
+    sum = 0
+    i = 0
+
+    while i < len(self.population) and sum < randomValue:
+      sum += self.population[i].rating
+      father += 1
+      i += 1
+
+    return father
+
+  def createNewPopulation(self):
+    newPopulation = []
+
+    for i in range(0, self.populationLength, 2):
+      fatherOne = self.selectFather()
+      fatherTwo = self.selectFather()
+
+      children = self.population[fatherOne].crossover(self.population[fatherTwo])
+
+      children[0].mutate(self.mutationRate)
+      children[1].mutate(self.mutationRate)
+
+      newPopulation.append(children[0])
+      newPopulation.append(children[1])
+    
+    self.population = newPopulation
+    self.sortPopulation()
+    self.bestSolution = self.population[0]
 
 # Cria a Lista de Produtos
 products = []
@@ -124,8 +162,48 @@ for i in range(len(productNames)):
 # Limite de Espaço de 3m^3
 spaceLimit = 3
 
-geneticAlgorithm = GeneticAlgorithm(20)
-geneticAlgorithm.initializePopulation(productNames, productSpaces, productValues, spaceLimit)
+def getBestOfBests():
+  bestOfBests = None
+  listOfSuperBests = []
 
-geneticAlgorithm.showBestSolution()
-print(geneticAlgorithm.getRatingSum())
+  for i in range(10):
+    print('---------------- SuperGeração ' + str(i) + ' ----------------')
+
+    best = None
+    listOfBests = []
+
+    geneticAlgorithm = GeneticAlgorithm(100, 0.05)
+    geneticAlgorithm.initializePopulation(productNames, productSpaces, productValues, spaceLimit)
+
+    for k in range(200):
+      geneticAlgorithm.createNewPopulation()
+      print('Geração ' + str(k + 1) + ': Best -> ' + str(geneticAlgorithm.showBestSolutionNumber()))
+
+      listOfBests.append(geneticAlgorithm.showBestSolutionNumber())
+
+      if(not best):
+        best = geneticAlgorithm.bestSolution
+
+      if(geneticAlgorithm.showBestSolutionNumber() > best.rating):
+        best = geneticAlgorithm.bestSolution
+      
+    
+    plt.plot(listOfBests)
+    plt.title('Gráfico da SuperGeração ' + str(i))
+    plt.show()
+
+    listOfSuperBests.append(best.rating)
+
+    if(not bestOfBests):
+      bestOfBests = best
+
+    if(bestOfBests.rating < best.rating):
+      bestOfBests = best
+
+  plt.plot(listOfSuperBests)
+  plt.title('Gráfico Final das SuperGerações')
+  plt.show()
+
+  bestOfBests.showIndividualData()
+
+getBestOfBests()

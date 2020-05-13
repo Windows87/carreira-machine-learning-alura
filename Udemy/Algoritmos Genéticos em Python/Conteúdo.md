@@ -47,3 +47,19 @@
 ## O que é Mutação
 
 - A Mutação cria diversidade, mudando aleatoriamente os genes dentro de indivíduos, é aplicado de forma menos frequente que a reprodução
+
+## Seleção dos Indivíduos
+
+- Operadores genéticos são utilizados em indivíduos selecionados dentro da população
+
+- Indivíduos mais aptos
+
+- Deve simular o mecanismo de seleção natural que atua sobre as espécies biológicas
+
+- Privilegiar indivíduos com avaliação alta, porém sem desprezar completamente os de avaliação baixa
+
+### Método da Roleta Viciada
+
+- Cada cromossomo recebe um pedaço proporcional à sua avaliação e a roleta é rdada
+
+- Etilismo: módulos de população que preservam os melhores, que garantem a estabilidade do melor e não sua evolução
