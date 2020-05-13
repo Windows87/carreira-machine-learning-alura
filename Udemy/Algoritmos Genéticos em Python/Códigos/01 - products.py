@@ -145,8 +145,9 @@ class GeneticAlgorithm:
       newPopulation.append(children[0])
       newPopulation.append(children[1])
     
-    self.population = newPopulation
+    self.population = newPopulation + self.population
     self.sortPopulation()
+    self.population = self.population[0:self.populationLength]
     self.bestSolution = self.population[0]
 
 # Cria a Lista de Produtos
